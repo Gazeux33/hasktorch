@@ -43,7 +43,7 @@ then
     exit
 fi
 
-if ! command -v pip &> /dev/null
+if ! command -v pip3 &> /dev/null
 then
     echo "pip could not be found. Please install python ("sudo apt install python-pip" for ubuntu systems)"
     exit
@@ -164,15 +164,15 @@ PYTHON=python3
 
 
 if ! ($PYTHON -c 'import yaml') ; then
-    $PYTHON -m pip install --user pyyaml
+    $PYTHON -m pip3 install --user pyyaml
 fi
 
 if ! ($PYTHON -c 'import dataclasses') ; then
-    $PYTHON -m pip install --user dataclasses
+    $PYTHON -m pip3 install --user dataclasses
 fi
 
 if ! ($PYTHON -c 'import typing_extensions') ; then
-    $PYTHON -m pip install --user typing_extensions
+    $PYTHON -m pip3 install --user typing_extensions
 fi
 
 # See https://github.com/pytorch/pytorch/blob/master/.circleci/scripts/cpp_doc_push_script.sh
