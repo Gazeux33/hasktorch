@@ -37,7 +37,7 @@ then
     exit
 fi
 
-if ! command -v python &> /dev/null
+if ! command -v python3 &> /dev/null
 then
     echo "python could not be found. Please install python ("sudo apt install python3.6" for ubuntu systems)"
     exit
@@ -160,10 +160,8 @@ mkdir build
 fi
 
 
-PYTHON=python
-if ! (python --version | grep "Python 2") ;then
-    PYTHON=python3
-fi
+PYTHON=python3
+
 
 if ! ($PYTHON -c 'import yaml') ; then
     $PYTHON -m pip install --user pyyaml
